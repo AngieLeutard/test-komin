@@ -6,7 +6,6 @@
 }
 
 :root {
-
     /* Font */
     --font-manrope: "manrope";
 
@@ -24,13 +23,46 @@
     --text-color: var(--black);
     --title-color: var(--white);
     --background-color: var(--grey);
-    
 }
 
 /* Reset */
 
+html {
+    height: 100%;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: var(--background-color);
+    max-width: 1440px;
+    background-color: var(--grey);
+    margin: 0 auto;
+}
+
+button {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 20px;
+}
+
+li {
+    list-style: none;
+}
+
+svg {
+    display: block;
+}
+
+p {
+    margin: 0;
 }
 
 /* General Font Classes */
@@ -61,3 +93,86 @@ body {
 }
 
 /* General sizes */
+
+/* Nav Section */
+
+.nav_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 4%;
+    height: 100%;
+    background-color: var(--white);
+    padding: 20px 10px 20px 10px;
+}
+
+.nav_section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 50%;
+}
+
+.hover_transform {
+    transition: all .2s ease-in-out;
+}
+
+.hover_transform:hover {
+    transform: scale(1.1);
+}
+
+/* Nav top section */
+
+.nav_section.-top {
+    justify-content: flex-start;
+}
+
+.nav_topSection-logosContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nav_topSection-button {
+    border-radius: 8px;
+    cursor: pointer;
+    width: 58px;
+    height: 58px;
+}
+
+.nav_topSection-logo {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.editButton {
+    background-color: var(--blue);
+    background-image: url(/assets/icons/nav_icons/circle.svg);
+    padding: 10px;
+}
+
+.editButton_svg {
+    fill: var(--white);
+}
+
+.nav_item {
+    width: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+
+/* Nav bottom section */
+
+.nav_section.-bottom {
+    justify-content: flex-end;
+}
+
+.nav_profile {
+    width: 100%;
+}
+
+.nav_profilePicture {
+    width: 100%;
+    border-radius: 50%;
+}
