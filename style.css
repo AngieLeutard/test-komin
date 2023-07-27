@@ -34,15 +34,18 @@ html {
 }
 
 body {
+    position: relative;
     max-width: 1440px;
     background-color: var(--grey);
     margin: 0 auto;
 }
 
-button {
+button, p, h1, li, div {
     border: none;
     margin: 0;
     padding: 0;
+    list-style: none;
+    background: none;
 }
 
 ul {
@@ -50,19 +53,14 @@ ul {
     flex-direction: column;
     align-items: center;
     padding: 0;
+    margin: 0;
     gap: 20px;
-}
-
-li {
-    list-style: none;
 }
 
 svg {
     display: block;
-}
-
-p {
-    margin: 0;
+    width: 24px;
+    height: 24px;
 }
 
 /* General Font Classes */
@@ -94,14 +92,78 @@ p {
 
 /* General sizes */
 
-/* Nav Section */
+/* Header section */
+
+.header_wrapper {
+    position: relative;
+    height: 227px;
+    margin-left: 60px;
+}
+
+.header_wrapper::before {
+    z-index: 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--blue);
+    opacity: 30%;
+}
+
+.header_background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 32px;
+}
+
+.header_list,
+.header_titleWrapper {
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+}
+
+.header_list {
+    justify-content: flex-end;
+    gap: 40px;
+}
+
+.header_item {
+    fill: var(--white);
+}
+
+.header_titleWrapper {
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+}
+
+.pencil {
+    fill: var(--white);
+}
+
+/* Nav section */
 
 .nav_wrapper {
+    position: absolute;
+    top: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 4%;
-    height: 100%;
+    width: 40px;
     background-color: var(--white);
     padding: 20px 10px 20px 10px;
 }
@@ -114,6 +176,10 @@ p {
     height: 50%;
 }
 
+.nav_item {
+    cursor: pointer;
+}
+
 .hover_transform {
     transition: all .2s ease-in-out;
 }
@@ -122,7 +188,7 @@ p {
     transform: scale(1.1);
 }
 
-/* Nav top section */
+    /* Nav top section */
 
 .nav_section.-top {
     justify-content: flex-start;
@@ -137,8 +203,8 @@ p {
 .nav_topSection-button {
     border-radius: 8px;
     cursor: pointer;
-    width: 58px;
-    height: 58px;
+    width: 40px;
+    height: 40px;
 }
 
 .nav_topSection-logo {
@@ -154,15 +220,11 @@ p {
 
 .editButton_svg {
     fill: var(--white);
+    width: auto;
+    height: auto;
 }
 
-.nav_item {
-    width: 24px;
-    width: 24px;
-    cursor: pointer;
-}
-
-/* Nav bottom section */
+    /* Nav bottom section */
 
 .nav_section.-bottom {
     justify-content: flex-end;
