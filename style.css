@@ -255,6 +255,7 @@ svg {
 }
 
 .card {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -264,6 +265,7 @@ svg {
     border-radius: 8px;
     margin-bottom: 10px;
     transition: all 0.3s;
+    cursor: pointer;
 }
 
 .card:hover {
@@ -331,8 +333,6 @@ svg {
     position: absolute;
     top: 5px;
     right: 9px;
-    width: 50px;
-    height: 15px;
     padding: 2px 5px 2px 5px;
     display: flex;
     flex-direction: row;
@@ -352,4 +352,10 @@ svg {
 
 .card_timerText {
     color: var(--blue);
+}
+
+.card.-disable {
+    background-color: var(--white);
+    opacity: 50%;
+    pointer-events: none;
 }
